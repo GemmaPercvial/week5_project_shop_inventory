@@ -22,4 +22,12 @@ class Manufacturer
     sql = "DELETE FROM manufacturer"
     SqlRunner.run( sql )
   end
+
+  def shop()
+    sql = "SELECT shop.* FROM shop INNER JOIN stock ON stock.shop_id = shop.id WHERE stock.manufacturer_id = $1"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return results.map{|shop| Shop.new(shop)}
+  end
+
 end

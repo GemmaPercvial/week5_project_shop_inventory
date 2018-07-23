@@ -21,4 +21,11 @@ class Shop
     SqlRunner.run( sql )
   end
 
+  def manufacturer()
+    sql = "SELECT manufacturer.* FROM manufacturer INNER JOIN stock ON stock.manufacturer_id = manufacturer.id WHERE stock.shop_id = $1"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return results.map{|manufacturer| Manufacturer.new(manufacturer)}
+  end
+
 end

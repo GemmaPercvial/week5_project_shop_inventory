@@ -24,7 +24,20 @@ class Stock
 
   def self.delete_all
     sql = "DELETE FROM stock"
-    SqlRunner.run( sql )
+    SqlRunner.run(sql)
   end
 
+  def shop()
+    sql = "SELECT * FROM shop WHERE id = $1"
+    values = [@shop_id]
+    results = SqlRunner.run(sql, values)
+    return Shop.new(results.first)
+  end
+
+  def manufacturer()
+    sql = "SELECT * FROM manufacturer WHERE id = $1"
+    values = [@manufacturer_id]
+    results = SqlRunner.run(sql, values)
+    return Manufacturer.new(results.first)
+  end
 end
