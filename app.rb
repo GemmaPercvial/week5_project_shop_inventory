@@ -1,8 +1,10 @@
 require('sinatra')
 require('sinatra/contrib/all')
-require_relative('controllers/zombies_controller')
-require_relative('controllers/victims_controller')
-require_relative('controllers/bitings_controller')
+require_relative('controllers/manufacturer_controller')
+require_relative('controllers/shop_controller')
+require_relative('controllers/stock_controller')
+also_reload('./models/*')
+
 
 get '/' do
   erb( :index )
