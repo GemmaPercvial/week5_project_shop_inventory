@@ -1,0 +1,8 @@
+<p>All the manufacturer's</p>
+
+<% for manufacturer in @manufacturer %>
+
+  <p> Supplier called<%= manufacturer.name() %> based in <%= manufacturer.address %></p>
+  <p>will take <%= manufacturer.delivery_time() %> to arrive in the store</p>
+
+<% end %>

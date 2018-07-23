@@ -2,7 +2,7 @@ require_relative('../db/sql_runner')
 
 class Stock
 
-  attr_reader(:id, :shop_id, :manufacturer_id, :type, :colour, :shop_stock_level, :price, :manufacturer_cost)
+  attr_accessor(:id, :shop_id, :manufacturer_id, :type, :colour, :shop_stock_level, :price, :manufacturer_cost)
 
   def initialize( options )
     @id = options['id'].to_i if options['id']

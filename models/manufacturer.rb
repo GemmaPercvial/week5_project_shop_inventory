@@ -2,7 +2,7 @@ require_relative('../db/sql_runner')
 
 class Manufacturer
 
-  attr_reader(:id, :name, :address, :delivery_time, :shop_stock_level)
+  attr_accessor(:id, :name, :address, :delivery_time, :shop_stock_level)
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -54,5 +54,5 @@ class Manufacturer
     results = SqlRunner.run(sql, values)
     return Stock.new(results.first)
   end
-  
+
 end

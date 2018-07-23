@@ -1,8 +1,10 @@
 require('sinatra')
 require('sinatra/contrib/all')
+require_relative('../models/shop.rb')
 require_relative('../models/manufacturer.rb')
-also_reload('./models/*')
+require_relative('../models/stock.rb')
+also_reload('../models/*')
 
-get '/shop' do
-  p "Hello"
+get '/shops' do
+  "Hello World"
 end
