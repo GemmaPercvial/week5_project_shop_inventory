@@ -8,7 +8,8 @@ Shop.delete_all()
 Manufacturer.delete_all()
 
 shop1 = Shop.new({
-  "name" => "Next"})
+  "name" => "Next",
+  "address" => "Gyle Shopping Centre, Edinburgh"})
 shop1.save()
 
 manufacturer_nike = Manufacturer.new({

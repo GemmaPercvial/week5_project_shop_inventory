@@ -1,11 +1,12 @@
 require_relative('../db/sql_runner')
+require("pry-byebug")
 
 class Stock
 
   attr_accessor(:id, :shop_id, :manufacturer_id, :type, :colour, :shop_stock_level, :price, :manufacturer_cost)
 
-  def initialize( options )
-    @id = options['id'].to_i if options['id']
+  def initialize(options)
+    @id = options['id'].to_i if options['id'].to_i
     @shop_id = options['shop_id'].to_i
     @manufacturer_id = options['manufacturer_id'].to_i
     @type = options['type']
@@ -38,7 +39,7 @@ class Stock
 
   def delete()
     sql = "DELETE FROM stock WHERE id = $1"
-    values = [@id]
+    values = [id]
     SqlRunner.run(sql, values)
   end
 
@@ -48,7 +49,7 @@ class Stock
   end
 
   def update()
-    sql = "UPDATE manufacturer SET(shop_id, manufacturer_id, type, colour, shop_stock_level, price, manufacturer_cost) = ($1, $2, $3, $4, $5, $6, $7) WHERE id = $8"
+    sql = "UPDATE stock SET(shop_id, manufacturer_id, type, colour, shop_stock_level, price, manufacturer_cost) = ($1, $2, $3, $4, $5, $6, $7) WHERE id = $1"
     values = [@shop_id, @manufacturer_id, @type, @colour, @shop_stock_level, @price, @manufacturer_cost]
     SqlRunner.run(sql, values)
   end
@@ -61,7 +62,7 @@ class Stock
 
   def self.find(id)
     sql = "SELECT * FROM stock WHERE id = $1"
-    values = [@id]
+    values = [id]
     results = SqlRunner.run(sql, values)
     return Stock.new(results.first)
   end
@@ -74,4 +75,7 @@ class Stock
   #   return (@shop_stock_level * @price) - (@shop_stock_level * @manufacturer_cost)
   # end
 
+  def garment_name
+    return "#{@colour.capitalize} #{@type}"
+  end
 end

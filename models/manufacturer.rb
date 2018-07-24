@@ -50,9 +50,13 @@ class Manufacturer
 
   def self.find(id)
     sql = "SELECT * FROM manufacturer WHERE id = $1"
-    values = [@id]
+    values = [id]
     results = SqlRunner.run(sql, values)
-    return Stock.new(results.first)
+    return Manufacturer.new(results.first)
+  end
+
+  def manufacturer_name
+    return "#{@name.capitalize}"
   end
 
 end

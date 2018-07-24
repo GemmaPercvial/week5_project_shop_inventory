@@ -1,0 +1,6 @@
+<p>All the Stock</p>
+
+<% for stock in @stocks %>
+  <p> Garment - <%= stock.colour() %> <%= stock.type() %> by <%= stock.manufacturer.name() %> </p>
+  <p> <a href="/stocks/<%=stock.id%>"> Show details </a> </p>
+<% end %>

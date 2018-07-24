@@ -6,5 +6,11 @@ require_relative('../models/stock.rb')
 also_reload('../models/*')
 
 get '/shops' do
-  "Hello World"
+  @shops = Shop.all
+  erb (:"shops/index")
+end
+
+get '/shops/:id' do
+  @shop = Shop.find(params['id'])
+  erb(:"shops/show")
 end

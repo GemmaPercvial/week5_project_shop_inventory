@@ -18,14 +18,33 @@ get '/stocks/new' do
   erb(:"stocks/new")
 end
 
-post '/stocks/create' do
+get '/stocks/:id' do
+  @stock = Stock.find(params['id'])
+  erb(:"stocks/show")
+end
+
+post '/stocks' do
   @stocks = Stock.all
   @stock = Stock.new(params)
   @stock.save()
-  erb(:"stocks/create")
+  redirect to "/stocks"
 end
 
 get '/stocks/:id/edit' do
+  @shops = Shop.all
+  @manufacturers = Manufacturer.all
   @stock = Stock.find(params['id'])
-  erb(:"stock/edit")
+  erb(:"stocks/edit")
+end
+
+post '/stocks/:id' do
+  @stock = Stock.new(params)
+  @stock.update
+  redirect to "/stocks/" + params['id']
+end
+
+post '/stocks/:id/delete' do
+  @stocks = Stock.find(params['id'])
+  @stocks.delete
+  redirect to "/stocks"
 end

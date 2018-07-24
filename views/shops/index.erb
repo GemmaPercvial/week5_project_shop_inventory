@@ -1,7 +1,7 @@
-<p>All the shop's</p>
+<p>All the Stores</p>
 
-<% for shop in @shop %>
+<% for shop in @shops %>
 
-  <p>Shop is called <%= shop.name%></p>
-
+  <p> Store - <%= shop.shop_name() %> </p>
+  <p> <a href="/shops/<%=shop.id%>"> Show details </a> </p>
 <% end %>

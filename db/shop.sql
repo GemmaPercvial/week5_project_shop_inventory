@@ -10,7 +10,8 @@ CREATE TABLE manufacturer(
 
 CREATE TABLE shop(
   id SERIAL8 primary key,
-  name VARCHAR(255) not null);
+  name VARCHAR(255) not null,
+  address VARCHAR(255));
 
 CREATE TABLE stock(
   id SERIAL8 primary key,
@@ -18,6 +19,6 @@ CREATE TABLE stock(
   manufacturer_id INT8 references manufacturer(id),
   type VARCHAR(255),
   colour VARCHAR(255),
-  shop_stock_level INT2,
-  price INT2,
-  manufacturer_cost INT2);
+  shop_stock_level INT8,
+  price INT8,
+  manufacturer_cost INT8);
