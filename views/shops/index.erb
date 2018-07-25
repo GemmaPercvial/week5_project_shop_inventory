@@ -1,7 +1,11 @@
-<p>All the Stores</p>
+<h1>All the Stores</h1>
 
 <% for shop in @shops %>
-
-  <p> Store - <%= shop.shop_name() %> </p>
-  <p> <a href="/shops/<%=shop.id%>"> Show details </a> </p>
+<br>
+  <nav3><%= shop.shop_name() %> </nav3>
+  <div class="details-button">
+    <form action="/shops/<%=shop.id%>" method="get">
+      <input type="submit" value="Show details">
+    </form>
+  </div>
 <% end %>

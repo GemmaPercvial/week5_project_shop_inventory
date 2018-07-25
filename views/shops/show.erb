@@ -1,2 +1,9 @@
-<p>Stores Name: <%= @shop.name %></p>
-<p>Address: <%= @shop.address %></p>
+<h1>Shop details</h1>
+<nav2>Stores Name:</nav2> <nav3><%= @shop.name %></nav3><br>
+<nav2>Address:</nav2> <nav3><%= @shop.address %></nav3>
+
+<div class="edit-button">
+  <form action="/shops/<%=@shop.id%>/edit" method="get">
+    <input type="submit" value="Edit details">
+  </form>
+</div>

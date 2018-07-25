@@ -1,6 +1,17 @@
-<p>All the Manufacturers</p>
+<h1>All the Manufacturers</h1>
 
 <% for manufacturer in @manufacturers %>
-  <p> Manufacturer - <%= manufacturer.manufacturer_name() %> </p>
-  <p> <a href="/manufacturers/<%=manufacturer.id%>"> Show details </a> </p>
+  <br>
+  <nav3><%= manufacturer.manufacturer_name() %> </nav3>
+    <div class="details-button">
+      <form action="/manufacturers/<%=manufacturer.id%>" method="get">
+        <input type="submit" value="Show details">
+      </form>
+    </div>
 <% end %>
+<br>
+<div class="add-button">
+  <form action="/manufacturers/new" method="get">
+    <input type="submit" value="Add Manufacturer">
+  </form>
+</div>

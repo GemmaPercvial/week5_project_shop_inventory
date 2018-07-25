@@ -40,6 +40,8 @@ end
 post '/stocks/:id' do
   @stock = Stock.new(params)
   @stock.update
+  # binding.pry
+  # nil
   redirect to "/stocks/" + params['id']
 end
 

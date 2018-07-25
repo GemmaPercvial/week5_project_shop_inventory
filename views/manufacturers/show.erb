@@ -1,5 +1,16 @@
-<p>Manufacturers Name: <%= @manufacturer.name %></p>
-<p>Address: <%= @manufacturer.address %></p>
-<p>Estimated Delivery Time: <%= @manufacturer.delivery_time %></p>
+<h1>Manufacturer details</h1>
+<nav2>Manufacturers Name:</nav2> <nav3><%= @manufacturer.name %></nav3><br>
+<nav2>Address:</nav2> <nav3><%= @manufacturer.address %></nav3><br>
+<nav2>Estimated Delivery Time:</nav2> <nav3><%= @manufacturer.delivery_time %></nav3><br>
 
-<p> <a href="/manufacturers/<%=@manufacturer.id%>/edit"> Edit details </a> </p>
+<div class="edit-button">
+  <form action="/manufacturers/<%=@manufacturer.id%>/edit" method="get">
+    <input type="submit" value="Edit details">
+  </form>
+</div>
+
+<div class="delete-button">
+  <form class="" action="/manufacturers/<%= @manufacturer.id %>/delete" method="post">
+    <input type="submit" value="Delete Manufacturer">
+  </form>
+</div>

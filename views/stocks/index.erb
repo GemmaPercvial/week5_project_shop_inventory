@@ -1,6 +1,20 @@
-<p>All the Stock</p>
+<h1>All the Stock</h1>
 
 <% for stock in @stocks %>
-  <p> Garment - <%= stock.colour() %> <%= stock.type() %> by <%= stock.manufacturer.name() %> </p>
-  <p> <a href="/stocks/<%=stock.id%>"> Show details </a> </p>
+<br>
+  <nav2><%= stock.colour()%> <%= stock.type()%></nav2>
+  <nav3> by <%= stock.manufacturer.name() %> </nav3>
+  <br>
+  <div class="details-button">
+    <form action="/stocks/<%=stock.id%>" method="get">
+      <input type="submit" value="Show details">
+    </form>
+  </div>
 <% end %>
+
+<br>
+<div class="add-button">
+  <form action="/stocks/new" method="get">
+    <input type="submit" value="Add Stock">
+  </form>
+</div>

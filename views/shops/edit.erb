@@ -1,0 +1,14 @@
+<h1>Edit Stores Details</h1>
+<nav2>
+<form class="" action="/shops/<%= @shop.id %>" method="post">
+
+  <lable for="name">Stores Name:</label>
+  <input id="name" value="<% @shop.name %>" type-"text" name="name">
+
+  <lable for="address">Address:</lable>
+  <input id="address" value="<% @shop.address %>" type="text" name="address">
+
+  <input type="submit" value="Update Store">
+
+</form>
+</nav2>

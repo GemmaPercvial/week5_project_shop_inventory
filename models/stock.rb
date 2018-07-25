@@ -49,8 +49,8 @@ class Stock
   end
 
   def update()
-    sql = "UPDATE stock SET(shop_id, manufacturer_id, type, colour, shop_stock_level, price, manufacturer_cost) = ($1, $2, $3, $4, $5, $6, $7) WHERE id = $1"
-    values = [@shop_id, @manufacturer_id, @type, @colour, @shop_stock_level, @price, @manufacturer_cost]
+    sql = "UPDATE stock SET(shop_id, manufacturer_id, type, colour, shop_stock_level, price, manufacturer_cost) = ($1, $2, $3, $4, $5, $6, $7) WHERE id = $8"
+    values = [@shop_id, @manufacturer_id, @type, @colour, @shop_stock_level, @price, @manufacturer_cost, @id]
     SqlRunner.run(sql, values)
   end
 

@@ -16,7 +16,7 @@ CREATE TABLE shop(
 CREATE TABLE stock(
   id SERIAL8 primary key,
   shop_id INT8 references shop(id),
-  manufacturer_id INT8 references manufacturer(id),
+  manufacturer_id INT8 references manufacturer(id) ON DELETE CASCADE,
   type VARCHAR(255),
   colour VARCHAR(255),
   shop_stock_level INT8,

@@ -10,9 +10,22 @@ get '/manufacturers' do
   erb (:"manufacturers/index")
 end
 
+get '/manufacturers/new' do
+  @manufacturers = Manufacturer.all
+  @stocks = Stock.all
+  erb(:"manufacturers/new")
+end
+
 get '/manufacturers/:id' do
   @manufacturer = Manufacturer.find(params['id'])
   erb(:"manufacturers/show")
+end
+
+post '/manufacturers' do
+  @manufacturers = Manufacturer.all
+  @manufacturer = Manufacturer.new(params)
+  @manufacturer.save()
+  redirect to "/manufacturers"
 end
 
 get '/manufacturers/:id/edit' do
@@ -24,4 +37,10 @@ post '/manufacturers/:id' do
   @manufacturer = Manufacturer.new(params)
   @manufacturer.update
   redirect to "/manufacturers/" + params['id']
+end
+
+post '/manufacturers/:id/delete' do
+  @manufacturers = Manufacturer.find(params['id'])
+  @manufacturers.delete()
+  redirect to "/manufacturers"
 end

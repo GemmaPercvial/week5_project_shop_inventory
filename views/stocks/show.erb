@@ -1,13 +1,18 @@
-<p>Garment details
-<p>Avalible in Store: <% @stock.shop_id %>
-<p>Manufacturers Name: <%= @stock.manufacturer.name %></p>
-<p>Garment Type: <%= @stock.type %>
-<p>Garment Colour: <%= @stock.colour %>
-<p>Stock Level: <%= @stock.shop_stock_level %>
-<p>Price: <%= @stock.price %>
-<p>Production Cost: <%= @stock.manufacturer_cost %>
+<h1>Garment details</h1>
+<nav2>Avalible in Store:</nav2> <nav3><%= @stock.shop.name %></nav3><br>
+<nav2>Manufacturers Name:</nav2> <nav3><%= @stock.manufacturer.name %></nav3><br>
+<nav2>Garment Type:</nav2> <nav3><%= @stock.type %></nav3><br>
+<nav2>Garment Colour:</nav2> <nav3><%= @stock.colour %></nav3><br>
+<nav2>Stock Level:</nav2> <nav3><%= @stock.shop_stock_level %></nav3><br>
+<nav2>Price:</nav2> <nav3><%= @stock.price %></nav3><br>
+<nav2>Production Cost:</nav2> <nav3><%= @stock.manufacturer_cost %></nav3><br>
 
-<p> <a href="/stocks/<%=@stock.id%>/edit"> Edit details </a> </p>
+<div class="edit-button">
+  <form action="/stocks/<%=@stock.id%>/edit" method="get">
+    <input type="submit" value="Edit details">
+  </form>
+</div>
+
 <form class="" action="/stocks/<%= @stock.id %>/delete" method="post">
   <input type="submit" value="Delete Item">
 </form>

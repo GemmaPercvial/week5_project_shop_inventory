@@ -1,47 +1,19 @@
-<p>Add New Manufacturer
-  <form class="Stock"
+<h1>Add New Manufacturer</h1>
+<nav2>
+  <form class="Manufacturer" action="/manufacturers" method="post">
 
-
-
-<p> Add new Stock </p>
-
-<form class="Stock" action="/stocks" method="post">
-
-<label for="shop-select">Select a Shop:</label>
-  <select id="shop-select" name="shop_id">
-    <% for shop in @shops %>
-      <option value="<%= shop.id %>"> <%=shop.name%> </option>
-    <% end %>
-  </select>
+<lable for="name">Manufacturers Name:</lable>
+<input id="name" type="text" name="name">
 </br>
 
-<label for="manufacturer-select">Select a Manufacturer:</label>
-  <select id="manufacturer-select" name="manufacturer_id">
-    <% for manufacturer in @manufacturers %>
-      <option value="<%= manufacturer.id %>"> <%=manufacturer.name%> </option>
-    <% end %>
-  </select>
+<label for="address">Address:</label>
+  <input id="address" type="text" name="address">
 </br>
 
-<label for="type">Garment Type:</label>
-  <input id="type" type="text" name="type">
+<label for="delivery_time">Estimated Delivery Time:</label>
+  <input id="delivery_time" type="text" name="delivery_time">
 </br>
 
-<label for="colour">Garment colour:</label>
-  <input id="colour" type="text" name="colour">
-</br>
-
-<label for="shop_stock_level">Amount of Garments:</label>
-  <input id="shop_stock_level" type="number" name="shop_stock_level">
-</br>
-
-<label for="price">Price:</label>
-  <input id="price" type="number" name="price">
-</br>
-
-<label for="manufacturer_cost">Cost of Production:</label>
-  <input id="manufacturer_cost" type="number" name="manufacturer_cost">
-</br>
-
-<input type="submit" value="Add new Stock">
+<input type="submit" value="Add new Manufacturer">
 </form>
+</nav2>
