@@ -3,14 +3,14 @@
 <form class="" action="/manufacturers/<%= @manufacturer.id %>" method="post">
 
   <label for="name">Manufacturers Name:</label>
-  <input id="name" value="<% @manufacturer.name %>" type="text" name="name">
-
+  <input id="name" value="<%= @manufacturer.name %>" type="text" name="name">
+<br>
   <label for="address">Address:</label>
-  <input id="address" value="<% @manufacturer.address %>" type="text" name="address">
-
+  <input id="address" value="<%= @manufacturer.address %>" type="text" name="address">
+<br>
   <label for="delivery_time">Delivery Time:</label>
-  <input id="delivery_time" value="<% @manufacturer.delivery_time %>" type="text" name="delivery_time">
-
+  <input id="delivery_time" value="<%= @manufacturer.delivery_time %>" type="text" name="delivery_time">
+<br>
   <input type="submit" value="Update Manufacturer">
 </form>
 </nav2>

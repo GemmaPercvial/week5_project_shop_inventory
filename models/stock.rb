@@ -67,15 +67,17 @@ class Stock
     return Stock.new(results.first)
   end
 
-  def total_stock_level_cash_total()
-    return @shop_stock_level * @price
-  end
-
-  # def total_gross()
-  #   return (@shop_stock_level * @price) - (@shop_stock_level * @manufacturer_cost)
-  # end
-
   def garment_name
     return "#{@colour.capitalize} #{@type}"
   end
+
+  def high_low_stock_level
+    if shop_stock_level < 10
+      return "Low"
+    elsif shop_stock_level > 50
+      return "High"
+    else return "Medium"
+  end
+end
+
 end

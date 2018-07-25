@@ -1,0 +1,29 @@
+<h1>Tracker</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Store</th>
+      <th>Manufacturer</th>
+      <th>Type</th>
+      <th>Colour</th>
+      <th>Stock Level</th>
+      <th>Sell Price</th>
+      <th>Profit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for stock in @stocks %>
+      <tr>
+        <td><%= @shops.select{|shop| shop.id == stock.shop.id}[0].name%></td>
+        <td><%= @manufacturers.select{|manufacturer| manufacturer.id == stock.manufacturer_id}[0].name%></td>
+        <td><%= stock.type %></td>
+        <td><%= stock.colour %></td>
+        <td><%= stock.high_low_stock_level %></td>
+        <td><%= stock.price %></td>
+        <td><%= stock.price - stock.manufacturer_cost %></td>
+      <tr>
+    <% end %>
+    <td>totals</td>
+  </tbody>
+</table>

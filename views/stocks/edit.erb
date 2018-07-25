@@ -19,23 +19,23 @@
   </br>
 
   <label for="type">Garment Type:</label>
-  <input id="type" value="<% @stock.type %>" type="text" name="type">
+  <input id="type" value="<%= @stock.type %>" type="text" name="type">
   </br>
 
   <label for="colour">Garment colour:</label>
-  <input id="colour" value="<% @stock.colour %>" type="text" name="colour">
+  <input id="colour" value="<%= @stock.colour %>" type="text" name="colour">
   </br>
 
   <label for="shop_stock_level">Amount of Garments:</label>
-  <input id="shop_stock_level" value="<% @stock.shop_stock_level %>" type="number" name="shop_stock_level">
+  <input id="shop_stock_level" value="<%= @stock.shop_stock_level %>" type="number" name="shop_stock_level">
   </br>
 
   <label for="price">Price:</label>
-  <input id="price" value="<% @stock.price %>" type="number" name="price">
+  <input id="price" value="<%= @stock.price %>" type="number" name="price">
   </br>
 
   <label for="manufacturer_cost">Cost of Production:</label>
-  <input id="manufacturer_cost" value="<% @stock.manufacturer_cost %>" type="number" name="manufacturer_cost">
+  <input id="manufacturer_cost" value="<%= @stock.manufacturer_cost %>" type="number" name="manufacturer_cost">
   </br>
 
   <input type="submit" value="Update Stock">

@@ -7,6 +7,16 @@
 <nav2>Price:</nav2> <nav3><%= @stock.price %></nav3><br>
 <nav2>Production Cost:</nav2> <nav3><%= @stock.manufacturer_cost %></nav3><br>
 
+<p>
+  <% if @stock.shop_stock_level < 10 %>
+    Low in stock!
+  <% elsif @stock.shop_stock_level > 50 %>
+    High level of stock! whohoo
+  <% else %>
+    Medium level of stock
+  <% end %>
+</p>
+
 <div class="edit-button">
   <form action="/stocks/<%=@stock.id%>/edit" method="get">
     <input type="submit" value="Edit details">
