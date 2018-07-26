@@ -3,7 +3,7 @@ require("pry-byebug")
 
 class Stock
 
-  attr_accessor(:id, :shop_id, :manufacturer_id, :type, :colour, :shop_stock_level, :price, :manufacturer_cost)
+  attr_accessor(:id, :shop_id, :manufacturer_id, :type, :colour, :shop_stock_level, :price, :manufacturer_cost, :high_low_stock_level)
 
   def initialize(options)
     @id = options['id'].to_i if options['id'].to_i
@@ -73,11 +73,33 @@ class Stock
 
   def high_low_stock_level
     if shop_stock_level < 10
-      return "Low"
-    elsif shop_stock_level > 50
-      return "High"
-    else return "Medium"
+        return "Low"
+      elsif shop_stock_level > 50
+        return "High"
+      else return "Medium"
+    end
   end
-end
+
+  def total_price
+    sql = 'SELECT stock.price FROM stock'
+    results = SqlRunner.run(sql)
+    price = results.map {|hash| hash}
+    prices = []
+    for each in price
+      prices.push(each["price"].to_i)
+    end
+    return prices.sum
+  end
+
+  def total_manufacturer_costs
+    sql = 'SELECT stock.manufacturer_cost FROM stock'
+    results = SqlRunner.run(sql)
+    manufacturer_cost = results.map {|hash| hash}
+    manufacturer_costs = []
+    for each in manufacturer_cost
+      manufacturer_costs.push(each["manufacturer_cost"].to_i)
+    end
+    return manufacturer_costs.sum
+  end
 
 end

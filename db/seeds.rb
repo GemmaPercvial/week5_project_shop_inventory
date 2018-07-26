@@ -48,11 +48,11 @@ manufacturer_lipsy = Manufacturer.new({
   "delivery_time" => "2-3 working days"})
 manufacturer_lipsy.save()
 
-manufacturer_livis = Manufacturer.new({
-  "name" => "Livis",
+manufacturer_levis = Manufacturer.new({
+  "name" => "Levis",
   "address" => "California, USA",
   "delivery_time" => "7 working days"})
-manufacturer_livis.save()
+manufacturer_levis.save()
 
 manufacturer_superdry = Manufacturer.new({
   "name" => "Superdry",
@@ -202,7 +202,7 @@ black_heels1.save()
 
 blue_jeans1 = Stock.new({
   "shop_id" => shop1.id,
-  "manufacturer_id" => manufacturer_livis.id,
+  "manufacturer_id" => manufacturer_levis.id,
   "type" => "Jeans",
   "colour" => "Light Blue",
   "shop_stock_level" => "10",
@@ -212,7 +212,7 @@ blue_jeans1.save()
 
 blue_jeans2 = Stock.new({
   "shop_id" => shop1.id,
-  "manufacturer_id" => manufacturer_livis.id,
+  "manufacturer_id" => manufacturer_levis.id,
   "type" => "Jeans",
   "colour" => "Dark Blue",
   "shop_stock_level" => "10",

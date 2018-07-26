@@ -4,10 +4,20 @@
 <nav2>Garment Type:</nav2> <nav3><%= @stock.type %></nav3><br>
 <nav2>Garment Colour:</nav2> <nav3><%= @stock.colour %></nav3><br>
 <nav2>Stock Level:</nav2> <nav3><%= @stock.shop_stock_level %></nav3><br>
-<nav2>Price:</nav2> <nav3><%= @stock.price %></nav3><br>
-<nav2>Production Cost:</nav2> <nav3><%= @stock.manufacturer_cost %></nav3><br>
+<nav2>Price:</nav2> <nav3>£<%= @stock.price %></nav3><br>
+<nav2>Production Cost:</nav2> <nav3>£<%= @stock.manufacturer_cost %></nav3><br>
 
+<div class="edit-button">
+  <form action="/stocks/<%=@stock.id%>/edit" method="get">
+    <input type="submit" value="Edit details">
+  </form>
+</div>
+
+<form class="delete-button" action="/stocks/<%= @stock.id %>/delete" method="post">
+  <input type="submit" value="Delete Item">
+</form>
 <p>
+
   <% if @stock.shop_stock_level < 10 %>
     Low in stock!
   <% elsif @stock.shop_stock_level > 50 %>
@@ -16,13 +26,3 @@
     Medium level of stock
   <% end %>
 </p>
-
-<div class="edit-button">
-  <form action="/stocks/<%=@stock.id%>/edit" method="get">
-    <input type="submit" value="Edit details">
-  </form>
-</div>
-
-<form class="" action="/stocks/<%= @stock.id %>/delete" method="post">
-  <input type="submit" value="Delete Item">
-</form>

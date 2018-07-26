@@ -14,16 +14,32 @@
   </thead>
   <tbody>
     <% for stock in @stocks %>
-      <tr>
+    <% stock_class = case stock.high_low_stock_level
+        when "Low"
+          "stock_low"
+        when "Medium"
+          "stock_medium"
+        when "High"
+          "stock_high"
+        else ""
+      end%>
+        <tr>
         <td><%= @shops.select{|shop| shop.id == stock.shop.id}[0].name%></td>
         <td><%= @manufacturers.select{|manufacturer| manufacturer.id == stock.manufacturer_id}[0].name%></td>
         <td><%= stock.type %></td>
         <td><%= stock.colour %></td>
-        <td><%= stock.high_low_stock_level %></td>
-        <td><%= stock.price %></td>
-        <td><%= stock.price - stock.manufacturer_cost %></td>
+        <td class = <%= stock_class %>><%= stock.high_low_stock_level %></td>
+        <td>£<%= stock.price %></td>
+        <td>£<%= stock.price - stock.manufacturer_cost %></td>
       <tr>
     <% end %>
-    <td>totals</td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+    <td>totals:</td>
+    <td>£<%= stock.total_price %></td>
+    <td>£<%= stock.total_price - stock.total_manufacturer_costs%></td>
+
   </tbody>
 </table>

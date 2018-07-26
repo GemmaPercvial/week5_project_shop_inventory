@@ -1,5 +1,9 @@
 <h1>All the Stock</h1>
-
+<div class="add-button">
+  <form action="/stocks/new" method="get">
+    <input type="submit" value="Add Stock">
+  </form>
+</div>
 <% for stock in @stocks %>
 <br>
   <nav2><%= stock.colour()%> <%= stock.type()%></nav2>
@@ -11,10 +15,3 @@
     </form>
   </div>
 <% end %>
-
-<br>
-<div class="add-button">
-  <form action="/stocks/new" method="get">
-    <input type="submit" value="Add Stock">
-  </form>
-</div>

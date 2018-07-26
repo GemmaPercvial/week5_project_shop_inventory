@@ -1,7 +1,11 @@
 <h1>All the Manufacturers</h1>
-
+<div class="add-button">
+  <form action="/manufacturers/new" method="get">
+    <input type="submit" value="Add Manufacturer">
+  </form>
+</div>
 <% for manufacturer in @manufacturers %>
-  <br>
+<br>
   <nav3><%= manufacturer.manufacturer_name() %> </nav3>
     <div class="details-button">
       <form action="/manufacturers/<%=manufacturer.id%>" method="get">
@@ -10,8 +14,3 @@
     </div>
 <% end %>
 <br>
-<div class="add-button">
-  <form action="/manufacturers/new" method="get">
-    <input type="submit" value="Add Manufacturer">
-  </form>
-</div>
