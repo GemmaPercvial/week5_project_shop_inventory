@@ -205,7 +205,7 @@ blue_jeans1 = Stock.new({
   "manufacturer_id" => manufacturer_levis.id,
   "type" => "Jeans",
   "colour" => "Light Blue",
-  "shop_stock_level" => "10",
+  "shop_stock_level" => "20",
   "price" => "40",
   "manufacturer_cost" => "15"})
 blue_jeans1.save()
@@ -215,7 +215,7 @@ blue_jeans2 = Stock.new({
   "manufacturer_id" => manufacturer_levis.id,
   "type" => "Jeans",
   "colour" => "Dark Blue",
-  "shop_stock_level" => "10",
+  "shop_stock_level" => "30",
   "price" => "40",
   "manufacturer_cost" => "15"})
 blue_jeans2.save()

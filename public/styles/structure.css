@@ -3,6 +3,7 @@ body {
   background-color: #FEFFFF;
   color: #65CCB8;
 }
+
 .container {
   width: 70%;
   margin: 0 auto;
@@ -49,11 +50,9 @@ h1 {
 nav2 {
   color: #5085A5;
   font-size: 13pt;
-
 }
 
 nav3 {
   color: #65CCB8;
   font-size: 13pt;
-
 }

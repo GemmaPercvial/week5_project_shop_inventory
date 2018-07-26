@@ -74,7 +74,7 @@ class Stock
   def high_low_stock_level
     if shop_stock_level < 10
         return "Low"
-      elsif shop_stock_level > 50
+      elsif shop_stock_level > 15
         return "High"
       else return "Medium"
     end

@@ -22,13 +22,13 @@ tr:hover {
 }
 
 .stock_low{
-  color: red;
+  color: #cc6565;
 }
 
 .stock_medium{
-  color: yellow;
+  color: #ccbf65;
 }
 
 .stock_high{
-  color: green;
+  color: #85cc65;
 }

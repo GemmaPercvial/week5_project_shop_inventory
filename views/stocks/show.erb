@@ -18,11 +18,4 @@
 </form>
 <p>
 
-  <% if @stock.shop_stock_level < 10 %>
-    Low in stock!
-  <% elsif @stock.shop_stock_level > 50 %>
-    High level of stock! whohoo
-  <% else %>
-    Medium level of stock
-  <% end %>
-</p>
+<p><%=@stock.high_low_stock_level %> level of stock!</p>
