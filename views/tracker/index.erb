@@ -7,6 +7,7 @@
       <th>Manufacturer</th>
       <th>Type</th>
       <th>Colour</th>
+      <th>Quantity</th>
       <th>Stock Level</th>
       <th>Sell Price</th>
       <th>Profit</th>
@@ -28,6 +29,7 @@
         <td><%= @manufacturers.select{|manufacturer| manufacturer.id == stock.manufacturer_id}[0].name%></td>
         <td><%= stock.type %></td>
         <td><%= stock.colour %></td>
+        <td><%= stock.shop_stock_level %></td>
         <td class = <%= stock_class %>><%= stock.high_low_stock_level %></td>
         <td>£<%= stock.price %></td>
         <td>£<%= stock.price - stock.manufacturer_cost %></td>
@@ -37,9 +39,10 @@
     <td> </td>
     <td> </td>
     <td> </td>
+    <td> </td>
     <td>totals:</td>
-    <td>£<%= stock.total_price %></td>
-    <td>£<%= stock.total_price - stock.total_manufacturer_costs%></td>
+    <td>£<%= stock.total_price * stock.total_quantity%></td>
+    <td>£<%= (stock.total_price - stock.total_manufacturer_costs) * stock.total_quantity%></td>
 
   </tbody>
 </table>
