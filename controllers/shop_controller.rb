@@ -2,7 +2,6 @@ require_relative('../models/shop.rb')
 require_relative('../models/manufacturer.rb')
 require_relative('../models/stock.rb')
 
-
 get '/shops' do
   @shops = Shop.all
   erb (:"shops/index")

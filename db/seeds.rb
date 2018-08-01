@@ -1,7 +1,6 @@
 require_relative("../models/manufacturer.rb")
 require_relative("../models/shop.rb")
 require_relative("../models/stock.rb")
-require("pry-byebug")
 
 Stock.delete_all()
 Shop.delete_all()
