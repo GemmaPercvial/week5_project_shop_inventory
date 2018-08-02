@@ -1,3 +1,4 @@
+require_relative("../db/sql_runner.rb")
 require_relative("../models/manufacturer.rb")
 require_relative("../models/shop.rb")
 require_relative("../models/stock.rb")
