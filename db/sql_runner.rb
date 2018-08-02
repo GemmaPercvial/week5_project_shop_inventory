@@ -7,8 +7,8 @@ class SqlRunner
         port: 5432, user: 'kvhzmfmfqtehos', password: '716fd763fed4d7d56efdfe367b49583b6f757be3677d3a72a7564d77537afb83'})
       db.prepare("query", sql)
       result = db.exec_prepared("query", values)
-    ensure
-      db.close() if db != nil
+    # ensure
+    #   db.close() if db != nil
     end
     return result
   end
